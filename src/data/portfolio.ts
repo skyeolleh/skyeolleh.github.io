@@ -28,21 +28,21 @@ export interface PortfolioData {
 
 export const portfolioData: PortfolioData = {
   personal: {
-    name: "Skyeolleh",
-    role: "Frontend Developer",
-    introduction: "사용자 경험을 최우선으로 생각하는 개발자입니다.",
+    name: "여재훈",
+    role: "유니티 개발자",
+    introduction: "경험과 성장을 중요하게 생각하며 새로운 기술을 배우고 적용하는 것을 좋아합니다.",
     contact: {
-      email: "example@email.com", // 이메일을 수정하세요
+      email: "yeojh97@gmail.com",
       github: "https://github.com/skyeolleh",
     },
   },
   about: {
     title: "About Me",
     description: [
-      "문제를 해결하고 새로운 기술을 배우는 것을 좋아합니다.",
-      "깔끔하고 유지보수 가능한 코드를 작성하기 위해 노력합니다.",
+      "프로젝트 기획단계 부터, 개발, 론칭까지 전체적인 프로세스 경험이 있습니다.",
+      "게임 개발 뿐아니라, 웹 개발, 서버 개발, Devops 등 다양한 분야의 개발 경험이 있습니다."
     ],
-    skills: ["React", "Next.js", "TypeScript", "Tailwind CSS", "Framer Motion"],
+    skills: ["Unity", "C#", "Jenkins", "Django", "Go", "MySQL", "PostgreSQL", "Redis", "Docker", "Kubernetes"],
   },
   projects: [
     {
