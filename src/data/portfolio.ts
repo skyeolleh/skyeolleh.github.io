@@ -9,6 +9,15 @@ export interface ProjectContribution {
   detail?: string;
 }
 
+export interface WorkExperience {
+  company: string;
+  position: string;
+  period: string;
+  description: string;
+  achievements: string[];
+  techStack: string[];
+}
+
 export interface Project {
   title: string;
   slug: string;
@@ -19,7 +28,6 @@ export interface Project {
   image?: string;
   logo?: string;
   
-  // 상세 페이지용 확장 데이터
   details: {
     company?: string;
     period?: string;
@@ -28,7 +36,6 @@ export interface Project {
     problem?: string;
     solution?: string;
     features: string[];
-    // 문자열(기존) 또는 객체(상세 설명 포함) 모두 지원
     contributions?: (string | ProjectContribution)[];
     challenges?: string;
     images?: string[];
@@ -52,6 +59,7 @@ export interface PortfolioData {
     description: string[];
     skills: string[];
   };
+  workExperience: WorkExperience[]; // 경력 데이터 추가
   projects: Project[];
 }
 
@@ -71,67 +79,51 @@ export const portfolioData: PortfolioData = {
       "프로젝트 기획단계 부터, 개발, 론칭까지 전체적인 프로세스 경험이 있습니다.",
       "게임 개발 뿐아니라, 웹 개발, 서버 개발, Devops 등 다양한 분야의 개발 경험이 있습니다."
     ],
-    skills: ["Unity", "C#", "Jenkins", "Django", "Go", "MySQL", "PostgreSQL", "Redis", "Docker", "Kubernetes"],
+    skills: ["Unity", "C#", "Jenkins", "Django", "Go", "MySQL", "PostgreSQL", "Redis", "Docker"],
   },
+  workExperience: [
+    {
+      company: "주식회사 컨샐러드",
+      position: "유니티 클라이언트 개발 / 서버 개발 / Devops",
+      period: "2021.06 - 2025.07",
+      description: "핵심 개발 멤버로써 클라이언트, 서버 등 다양한 업무를 담당했습니다.",
+      achievements: [
+        "주디 클라이언트, 서버 개발",
+        "Jenkins CI/CD 파이프라인 구축 및 배포 자동화",
+      ],
+      techStack: ["Unity", "C#", "Django", "Jenkins", "AWS", "Docker"]
+    },
+    {
+      company: "깔라만시 스튜디오",
+      position: "프론트엔드 / 백엔드 개발자",
+      period: "2020.07 ~ 2021.06",
+      description: "React를 메인으로 프론트엔드 개발과, Django로 서버 개발 업무를 담당했습니다.",
+      achievements: [
+        "React/React Native 프로젝트 개발",
+        "Django 서버 개발"
+      ],
+      techStack: ["React", "React Native", "TypeScript", "Django"]
+    },
+    {
+      company: "마스터 컴퍼니",
+      position: "프론트엔드 개발자",
+      period: "2015.10 ~ 2017.02",
+      description: "온라인 중장비 매칭 서비스 공사마스터 웹 프론트 개발",
+      achievements: [
+        "HTML, CSS, JavaScript를 이용한 웹 프론트 개발",
+        "Objective-C를 이용한 iOS 앱 제작 경험"
+      ],
+      techStack: ["HTML", "CSS", "JavaScript", "Objective-C"]
+    }
+  ],
   projects: [
-    {
-      title: "Portfolio Website",
-      slug: "portfolio-website",
-      description: "Next.js와 Tailwind CSS로 제작한 개인 포트폴리오 사이트입니다.",
-      techStack: ["Next.js", "TypeScript", "Tailwind CSS", "Framer Motion"],
-      github: "https://github.com/skyeolleh/skyeolleh.github.io",
-      details: {
-        company: "Personal Project",
-        period: "2025.11 - Present",
-        role: "Sole Developer",
-        overview: "자신의 경험과 기술력을 효과적으로 보여주기 위한 개인 브랜딩 웹사이트입니다. 정적 배포가 가능한 구조로 설계하여 운영 비용을 최소화하면서도, 모던한 웹 기술을 활용해 사용자 경험을 극대화했습니다.",
-        problem: "",
-        solution: "",
-        features: [
-          "Next.js 15 App Router 기반의 최신 아키텍처",
-          "Tailwind CSS v4를 활용한 반응형 디자인",
-          "GitHub Actions를 이용한 자동화된 CI/CD 파이프라인",
-          "Framer Motion을 활용한 자연스러운 페이지 전환 효과"
-        ],
-        contributions: [
-          {
-            title: "SSG(Static Site Generation) 구현",
-            detail: "GitHub Pages 배포를 위해 Next.js의 generateStaticParams를 활용하여 동적 라우팅 문제를 해결하고 빌드 타임에 정적 페이지를 생성하도록 구현했습니다."
-          },
-          "컴포넌트 재사용성을 고려한 Atomic Design 패턴 일부 적용 (ui/sections/layout 분리)",
-          "TypeScript 인터페이스 설계를 통한 데이터 구조화 및 유지보수성 향상",
-          "SEO 최적화를 위한 메타데이터 및 시멘틱 태그 적용"
-        ],
-        challenges: "초기에는 styled-components 사용을 고려했으나, Next.js Server Components(RSC)에서의 스타일링 런타임 오버헤드를 줄이기 위해 Zero-runtime 솔루션인 Tailwind CSS를 도입하여 퍼포먼스를 개선했습니다."
-      }
-    },
-    {
-      title: "Project Example 2",
-      slug: "project-example-2",
-      description: "멋진 프로젝트 설명이 들어갈 자리입니다.",
-      techStack: ["React", "Node.js", "PostgreSQL"],
-      details: {
-        company: "Tech Startup A",
-        period: "2023.01 - 2023.06",
-        role: "Backend Engineer",
-        overview: "이 프로젝트는 예시 데이터입니다. 실제 프로젝트 내용을 채워주세요.",
-        features: [
-          "주요 기능 1",
-          "주요 기능 2"
-        ],
-        contributions: [
-          "기여 내용 1: 서버 아키텍처 설계 및 DB 스키마 최적화",
-          "기여 내용 2: API 응답 속도 30% 개선"
-        ]
-      }
-    },
     {
       title: "주디",
       slug: "joody",
       logo: "/images/joody/icon.png",
       link: "https://play.google.com/store/apps/details?id=com.joodyrn",
       description: "주디는 슬라임을 꾸미고 직접 아이템을 제작할 수 있으며, 다른 유저들과의 소통과 교환을 할 수 있는 커뮤니티 중심 게임 입니다.",
-      techStack: ["Unity", "C#", "Jenkins", "Django", "Go", "MySQL", "Redis", "Docker"],
+      techStack: ["Unity", "C#", "Jenkins", "Django", "MySQL", "Redis", "Docker"],
       details: {
         company: "주식회사 컨샐러드",
         period: "2022.04 - ",
@@ -181,6 +173,45 @@ export const portfolioData: PortfolioData = {
         resources: [
            { title: "Play Store", link: "https://play.google.com/store/apps/details?id=com.joodyrn", type: "demo" }
         ]
+      }
+    },
+    {
+      title: "마이주디",
+      slug: "myjoody",
+      logo: "/images/myjoody/icon.png",
+      link: "https://play.google.com/store/apps/details?id=io.consalad.joody2aos",
+      description: "마이주디는 주디의 여러 장점들을 계승하고, 단점을들 보완하여 더 나은 품질의 게임 플레이를 제공하기 위해 제작된 게임 입니다.",
+      techStack: ["Unity", "C#", "Jenkins", "GRPC", "Go", "PostgreSQL", "Redis"],
+      details: {
+        company: "주식회사 컨샐러드",
+        period: "2025.02 ~ ",
+        role: "유니티 클라이언트 개발 / 서버개발",
+        overview: "처음 주디를 개발하기 시작했을 떄 부터 쌓아온 노하우와 경험을 바탕으로 더욱 발전된 주디를 제공하기 위한 프로젝트 였습니다. \n플리마켓이라는 유저들의 그린 아이템을 직접 판매할 수 있는 획기적인 시스템이 존재했습니다.",
+        features: [
+          "유저들이 직접 제작한 아이템을 개인 마켓을 이용해 판매할 수 있었습니다.",
+        ],
+        problem: "서버 통신을 최소화하고 메모리 최적화를 위한 많은 어려움이 있었습니다.",
+        solution: "지속적인 프로파일링과 여러 최적화 기법들을 적용하여 많은 문제를 해결했습니다",
+        contributions: [
+          {
+            title: "개인 마켓 시스템 개발",
+            detail: "유저들이 직접 제작한 아이템을 개인 마켓을 이용해 판매할 수 있는 시스템을 개발했습니다."
+          },
+          {
+            title: "상점 시스템 개발",
+          },
+          {
+            title: "멀티 플레이 컨텐츠 개발",
+            detail: "Photon Fusion을 활용하여 다양한 멀티 플레이 컨텐츠를 개발했습니다."
+          },
+          {
+            title: "섬 꾸미기 개발",
+            detail: "그리드 기반 섬 꾸미기 컨텐츠를 개발했습니다."
+          }
+        ],
+        images: [
+          "/images/myjoody/myjoody1.png",
+        ],
       }
     },
   ],

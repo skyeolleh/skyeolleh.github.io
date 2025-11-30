@@ -17,9 +17,8 @@ export function Contact() {
       >
         <h2 className="text-3xl md:text-4xl font-bold">Get in Touch</h2>
         <p className="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
-          새로운 기회나 협업에 대해 언제든지 열려있습니다.
+          다양한 경험을 해왔고, 앞으로도 더 많은 경험으로 성장하고 싶습니다.
           <br />
-          궁금한 점이 있거나 인사를 나누고 싶다면 편하게 연락주세요.
         </p>
 
         <div className="flex justify-center gap-6">
