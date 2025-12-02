@@ -21,6 +21,7 @@ export function Header() {
     { name: "About", href: "/#about" },
     { name: "Experience", href: "/#experience" },
     { name: "Projects", href: "/#projects" },
+    { name: "Resume", href: "/resume" }, // 추가
     { name: "Contact", href: "/#contact" },
   ];
 

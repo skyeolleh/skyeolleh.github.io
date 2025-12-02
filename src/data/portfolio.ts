@@ -214,5 +214,104 @@ export const portfolioData: PortfolioData = {
         ],
       }
     },
+    {
+      title: "픽셀 머지 타워 - 자라나라 슬라임 타워",
+      slug: "mergetower",
+      logo: "/images/mergetower/icon.png",
+      link: "https://play.google.com/store/apps/details?id=io.consalad.joody2aos",
+      description: "주디의 장점인 귀여운 슬라임과 다양한 도트 건물들을 세워 나가는 머지 게임입니다.",
+      techStack: ["Unity", "C#", "Unity Services", "Firebase", "Jenkins"],
+      details: {
+        company: "주식회사 컨샐러드",
+        // period: "2025.02 ~ ",
+        role: "유니티 클라이언트 개발",
+        overview: "머지 시스템을 담당해주던 개발자분과 함께 개발자 2명, 디자이너 1명, 기획자1명 4인구성으로 개발했던 게임입니다. 다른 서비스나 게임에서 개발했던 경험을 살려 빠르게 개발하기 위해 머지 시스템을 메인으로 담당하지 못해 아쉬웠지만, 유니티에서 제공하는 다양한 게이밍 서비스를 활용한 개발을 경험할 수 있었습니다.",
+        features: [
+           
+        ],
+        problem: "적은 인원 제한된 시간으로 기간내에 최고의 게임을 개발하기 위한 어려움이 있었습니다.",
+        solution: "서버리스 프로젝트로 빠르게 개발하여 빠른 기간내에 개발을 완료할 수 있었습니다.",
+        contributions: [
+          {
+            title: "Unity Services를 이용한 서버리스 게임 개발",
+            detail: "유니티 서비스의 Cloud Code, Cloud Save, Remote Config 등을 활용하여 서버리스 프로젝트를 개발했습니다."
+          },
+          {
+            title: "Firebase를 이용한 데이터 저장 및 관리",
+            detail: "Firebase의 Firestore, Realtime Database, Storage 등을 활용하여 데이터를 저장하고 관리했습니다."
+          },
+          {
+            title: "게임의 각종 시스템 개발",
+            detail: "메인 머지 부분을 제외한 게임내 대부분 시스템을 개발했습니다"
+          }
+        ],
+        images: [
+          "/images/mergetower/pixel1.png",
+          "/images/mergetower/pixel2.png",
+          "/images/mergetower/pixel3.png",
+        ],
+      }
+    },
+    {
+      title: "인피니티 스매시 (가제)",
+      slug: "infinitysmash",
+      logo: "",
+      description: "4가지 색상의 바닥을 부수며 지하세계 마왕을 만나러 가는 몬스터가 되어 무한히 내려가는 게임입니다.",
+      techStack: ["Unity", "C#"],
+      details: {
+        company: "개인 프로젝트",
+        period: "2025.11 ~ 개발 중",
+        role: "유니티 클라이언트 개발",
+        overview: "무한의 계단과 같은 킬링 타임 언제 어디서든 간단하고 쉬운 게임성으로 꾸준히 사랑받는 게임을 만들고 싶었습니다.",
+        features: [
+           
+        ],
+        problem: "특별한 튜토리얼이 없이, 유저가 플레이 방법을 쉽게 터득할 수 있도록 만드는 것",
+        solution: "정말 간단한 손가락 위자드 기능과 직관적인 플레이 방법으로 쉬운 게임 플레이를 유도했습니다.",
+        contributions: [
+          {
+            title: "AI와 에셋스토어 에셋을 활용해 개발",
+            detail: "에셋 스토어의 다양한 에셋과 AI를 통해 빠르게 게임을 제작하였습니다."
+          },
+        ],
+        images: [
+          "/images/projecta/screenshot1.jpg",
+        ],
+      }
+    },
+    {
+      title: "가방정리 뱀서라이크",
+      slug: "backmerge",
+      logo: "",
+      description: "가방에 아이템을 머지하고 정리하여 최고의 배치로 몰려오는 적을 잡는 뱀서라이크 게임입니다.",
+      techStack: ["Unity", "C#", "ECS", "DOTS"],
+      details: {
+        company: "개인 프로젝트",
+        period: "2025.09 ~ 개발 중",
+        role: "유니티 클라이언트 개발",
+        overview: "모바일에서의 최고의 퍼포먼스를 위해 ECS, DOTS를 활용하여 개발 진행중이며, 뱀서라이크 게임성을 유지하면서 가방정리와 머지 시스템을 추가했습니다.\n\n효율적인 아이템 배치로 대량의 적을 시원하게 적을 잡는 원초적인 재미를 위해 개발하고 있습니다.",
+        features: [
+          "Component 기반으로 다양한 무기 시스템 개발",
+          "최대 1000마리의 몬스터가 등장 가능하도록 ECS기반으로 게임 개발"
+        ],
+        problem: "ECS/DOTS를 활용하여 개발하다보니 기존 Monobehaviour 기반 방식과는 꽤나 달라 어려움이 있었습니다.",
+        solution: "ECS/DOTS 기반으로 개발되던 기록이 상당히 존재해 열심히 찾고 AI를 활용하며 개발하고 있습니다.",
+        contributions: [
+          {
+            title: "ECS/DOTS 기반 개발",
+            detail: "최고의 퍼포먼스를 위한 ECS/DOTS 기반 개발 진행중이며 모든 것을 해결할 순 없기에 하이브리드 방식으로 개발됩니다."
+          },
+          {
+            title: "가방정리 시스템 개발",
+            detail: "기본적인 그리드에 아이템을 배치하고 머지하는 시스템을 개발했습니다."
+          },
+        ],
+        images: [
+          "/images/projectb/screenshot1.png",
+          "/images/projectb/screenshot2.png",
+          "/images/projectb/screenshot3.jpg",
+        ],
+      }
+    },
   ],
 };
