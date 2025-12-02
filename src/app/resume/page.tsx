@@ -13,7 +13,7 @@ export default function ResumePage() {
   return (
     <main className="min-h-screen py-20 bg-white dark:bg-black">
       <SectionContainer className="max-w-4xl">
-        {/* 상단 네비게이션 & 액션 버튼
+        {/* 상단 네비게이션 & 액션 버튼 */}
         <div className="flex items-center justify-between mb-12 print:hidden">
           <Link
             href="/"
@@ -24,7 +24,7 @@ export default function ResumePage() {
           </Link>
           
           <PrintButton />
-        </div> */}
+        </div>
 
         {/* 자기소개서 본문 */}
         <article className="prose prose-lg dark:prose-invert max-w-none bg-white dark:bg-gray-900/50 p-8 md:p-12 rounded-2xl border border-gray-100 dark:border-gray-800 shadow-sm print:shadow-none print:border-none print:p-0">
