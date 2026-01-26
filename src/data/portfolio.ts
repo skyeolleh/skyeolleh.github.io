@@ -253,14 +253,14 @@ export const portfolioData: PortfolioData = {
       }
     },
     {
-      title: "인피니티 스매시 (가제)",
+      title: "바닥부수기",
       slug: "infinitysmash",
       logo: "",
       description: "4가지 색상의 바닥을 부수며 지하세계 마왕을 만나러 가는 몬스터가 되어 무한히 내려가는 게임입니다.",
       techStack: ["Unity", "C#"],
       details: {
         company: "개인 프로젝트",
-        period: "2025.11 ~ 개발 중",
+        period: "2025.11 ~ 2025.12",
         role: "유니티 클라이언트 개발",
         overview: "무한의 계단과 같은 킬링 타임 언제 어디서든 간단하고 쉬운 게임성으로 꾸준히 사랑받는 게임을 만들고 싶었습니다.\n\n요즘같이 AI의 도움을 받을 수 있는 세상에 빠르게 기획 > 개발 > 론칭하는 것이 중요하며 그에 맞게 빠르게 개발하여 게임을 테스트 해보기 좋은 프로젝트 였습니다.",
         features: [
@@ -292,7 +292,7 @@ export const portfolioData: PortfolioData = {
         overview: "모바일에서의 최고의 퍼포먼스를 위해 ECS, DOTS를 활용하여 개발 진행중이며, 뱀서라이크 게임성을 유지하면서 가방정리와 머지 시스템을 추가했습니다.\n\n효율적인 아이템 배치로 대량의 적을 시원하게 적을 잡는 원초적인 재미를 위해 개발하고 있습니다.",
         features: [
           "Component 기반으로 다양한 무기 시스템 개발",
-          "최대 1000마리의 몬스터가 등장 가능하도록 ECS기반으로 게임 개발"
+          "ECS기반으로 게임 개발 (최대 300마리 적 / 최대 30개 이상의 투사체 및 VFX)"
         ],
         problem: "ECS/DOTS를 활용하여 개발하다보니 기존 Monobehaviour 기반 방식과는 꽤나 달라 어려움이 있었습니다.",
         solution: "ECS/DOTS 기반으로 개발되던 기록이 상당히 존재해 열심히 찾고 AI를 활용하며 개발하고 있습니다.",
@@ -310,6 +310,25 @@ export const portfolioData: PortfolioData = {
           "/images/projectb/screenshot1.png",
           "/images/projectb/screenshot2.png",
           "/images/projectb/screenshot3.jpg",
+        ],
+      }
+    },
+    {
+      title: "광부라이프",
+      slug: "minerlife",
+      logo: "",
+      description: "광물을 캐와서 최고의 부자가 되어보자.",
+      techStack: ["Roblox Studio", "Lua"],
+      details: {
+        company: "개인 프로젝트",
+        period: "2026.01 ~ 개발 중",
+        role: "Roblox Studio 개발",
+        overview: "Roblox Studio를 활용하여 개발 진행중이며, 광물을 캐와서 최고의 부자가 되어보자.",
+        features: [
+          "광물을 캐와서 최고의 부자가 되어보자.",
+        ],
+        images: [
+          "/images/minerlife/screenshot1.png",
         ],
       }
     },
