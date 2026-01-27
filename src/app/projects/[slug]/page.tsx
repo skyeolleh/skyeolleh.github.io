@@ -28,6 +28,45 @@ export default async function ProjectDetail(props: Props) {
   }
 
   const galleryImages = project.details.images || [];
+  const features = (project.details.features ?? []).filter((f) => f.trim().length > 0);
+  const resources = project.details.resources ?? [];
+
+  const getYouTubeId = (url: string): string | null => {
+    try {
+      const u = new URL(url);
+      const host = u.hostname.replace(/^www\./, "");
+
+      // youtu.be/<id>
+      if (host === "youtu.be") {
+        const id = u.pathname.split("/").filter(Boolean)[0];
+        return id || null;
+      }
+
+      // youtube.com/watch?v=<id>
+      if (host === "youtube.com" || host === "m.youtube.com" || host === "music.youtube.com") {
+        const v = u.searchParams.get("v");
+        if (v) return v;
+
+        // youtube.com/embed/<id>, youtube.com/shorts/<id>
+        const parts = u.pathname.split("/").filter(Boolean);
+        const embedIdx = parts.indexOf("embed");
+        if (embedIdx >= 0 && parts[embedIdx + 1]) return parts[embedIdx + 1];
+        const shortsIdx = parts.indexOf("shorts");
+        if (shortsIdx >= 0 && parts[shortsIdx + 1]) return parts[shortsIdx + 1];
+      }
+
+      return null;
+    } catch {
+      return null;
+    }
+  };
+
+  const youtubeVideos = resources.flatMap((res) => {
+    if (res.type !== "video") return [];
+    const youtubeId = getYouTubeId(res.link);
+    if (!youtubeId) return [];
+    return [{ ...res, youtubeId }];
+  });
 
   const getResourceIcon = (type: string) => {
     switch (type) {
@@ -135,6 +174,45 @@ export default async function ProjectDetail(props: Props) {
               </p>
             </section>
 
+            {/* Video (YouTube) */}
+            {youtubeVideos.length > 0 && (
+              <section>
+                <h2 className="text-2xl font-bold mb-6 flex items-center gap-3">
+                  <span className="w-2 h-8 bg-red-600 rounded-full"></span>
+                  Video
+                </h2>
+                <div className="space-y-10">
+                  {youtubeVideos.map((video, idx) => (
+                    <div key={`${video.youtubeId}-${idx}`} className="space-y-3">
+                      <div className="flex items-center justify-between gap-4">
+                        <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
+                          {video.title}
+                        </h3>
+                        <Link
+                          href={video.link}
+                          target="_blank"
+                          className="text-sm text-gray-500 hover:text-black dark:hover:text-white transition-colors"
+                        >
+                          YouTube에서 열기
+                        </Link>
+                      </div>
+                      <div className="relative w-full aspect-video overflow-hidden rounded-2xl border border-gray-200 dark:border-gray-800 bg-black">
+                        <iframe
+                          className="absolute inset-0 h-full w-full"
+                          src={`https://www.youtube-nocookie.com/embed/${video.youtubeId}`}
+                          title={video.title}
+                          loading="lazy"
+                          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                          referrerPolicy="strict-origin-when-cross-origin"
+                          allowFullScreen
+                        />
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </section>
+            )}
+
             {/* Gallery / Screenshots */}
             {galleryImages.length > 0 && (
               <section>
@@ -212,14 +290,14 @@ export default async function ProjectDetail(props: Props) {
             )}
 
              {/* Resources & Links */}
-            {project.details.resources && project.details.resources.length > 0 && (
+            {resources.length > 0 && (
               <section className="pt-8 border-t border-gray-100 dark:border-gray-800">
                 <h2 className="text-2xl font-bold mb-6 flex items-center gap-3">
                    <span className="w-2 h-8 bg-gray-600 rounded-full"></span>
                    Resources & Links
                 </h2>
                 <div className="grid sm:grid-cols-2 gap-4">
-                  {project.details.resources.map((res, idx) => (
+                  {resources.map((res, idx) => (
                     <Link 
                       key={idx}
                       href={res.link} 
@@ -260,17 +338,19 @@ export default async function ProjectDetail(props: Props) {
               </div>
 
               {/* Key Features List */}
-              <div className="mt-8 p-6 rounded-2xl border border-gray-200 dark:border-gray-800 shadow-sm">
-                <h3 className="text-lg font-bold mb-6">Key Features</h3>
-                <ul className="space-y-3">
-                  {project.details.features.map((feature, idx) => (
-                    <li key={idx} className="flex items-start gap-3 text-gray-600 dark:text-gray-400 text-sm">
-                      <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-gray-400 flex-shrink-0" />
-                      <span>{feature}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
+              {features.length > 0 && (
+                <div className="mt-8 p-6 rounded-2xl border border-gray-200 dark:border-gray-800 shadow-sm">
+                  <h3 className="text-lg font-bold mb-6">Key Features</h3>
+                  <ul className="space-y-3">
+                    {features.map((feature, idx) => (
+                      <li key={idx} className="flex items-start gap-3 text-gray-600 dark:text-gray-400 text-sm">
+                        <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-gray-400 flex-shrink-0" />
+                        <span>{feature}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )}
             </section>
           </div>
           

@@ -258,25 +258,28 @@ export const portfolioData: PortfolioData = {
       logo: "",
       description: "4가지 색상의 바닥을 부수며 지하세계 마왕을 만나러 가는 몬스터가 되어 무한히 내려가는 게임입니다.",
       techStack: ["Unity", "C#"],
+      
       details: {
         company: "개인 프로젝트",
         period: "2025.11 ~ 2025.12",
         role: "유니티 클라이언트 개발",
         overview: "무한의 계단과 같은 킬링 타임 언제 어디서든 간단하고 쉬운 게임성으로 꾸준히 사랑받는 게임을 만들고 싶었습니다.\n\n요즘같이 AI의 도움을 받을 수 있는 세상에 빠르게 기획 > 개발 > 론칭하는 것이 중요하며 그에 맞게 빠르게 개발하여 게임을 테스트 해보기 좋은 프로젝트 였습니다.",
         features: [
-           
         ],
         problem: "특별한 튜토리얼이 없이, 유저가 플레이 방법을 쉽게 터득할 수 있도록 만드는 것",
-        solution: "정말 간단한 터치 유도 기능과 직관적인 플레이 방법으로 쉬운 게임 플레이를 유도했습니다.",
+        solution: "정말 간단한 터치 유도 기능과 같은 색을 클릭해야한다는 직관적인 게임성으로 쉽게 플레이 가능하도록 설계",
         contributions: [
           {
-            title: "AI와 에셋스토어 에셋을 활용해 개발",
+            title: "AI / 에셋 스토어 활용",
             detail: "에셋 스토어의 다양한 에셋과 AI를 통해 빠르게 게임을 제작하였습니다."
           },
         ],
         images: [
           "/images/projecta/screenshot1.jpg",
         ],
+        resources: [
+          { title: "Gameplay", link: "https://www.youtube.com/shorts/pqHr367OqsI", type: "video" },
+        ]
       }
     },
     {
@@ -284,7 +287,7 @@ export const portfolioData: PortfolioData = {
       slug: "backmerge",
       logo: "",
       description: "가방에 아이템을 머지하고 정리하여 최고의 배치로 몰려오는 적을 잡는 뱀서라이크 게임입니다.",
-      techStack: ["Unity", "C#", "ECS", "DOTS"],
+      techStack: ["Unity", "C#", "ECS", "DOTS", "Claude Code"],
       details: {
         company: "개인 프로젝트",
         period: "2025.09 ~ 개발 중",
@@ -298,39 +301,40 @@ export const portfolioData: PortfolioData = {
         solution: "ECS/DOTS 기반으로 개발되던 기록이 상당히 존재해 열심히 찾고 AI를 활용하며 개발하고 있습니다.",
         contributions: [
           {
-            title: "ECS/DOTS 기반 개발",
-            detail: "최고의 퍼포먼스를 위한 ECS/DOTS 기반 개발 진행중이며 모든 것을 해결할 순 없기에 하이브리드 방식으로 개발됩니다."
+            title: "ECS/DOTS 개발",
           },
           {
             title: "가방정리 시스템 개발",
-            detail: "기본적인 그리드에 아이템을 배치하고 머지하는 시스템을 개발했습니다."
           },
+          {
+            title: "Hexagon 맵 생성기 개발",
+          }
         ],
         images: [
-          "/images/projectb/screenshot1.png",
-          "/images/projectb/screenshot2.png",
-          "/images/projectb/screenshot3.jpg",
+          "/images/projectb/img1.png",
+          "/images/projectb/img2.png",
+          "/images/projectb/img3.png",
         ],
       }
-    },
-    {
-      title: "광부라이프",
-      slug: "minerlife",
-      logo: "",
-      description: "광물을 캐와서 최고의 부자가 되어보자.",
-      techStack: ["Roblox Studio", "Lua"],
-      details: {
-        company: "개인 프로젝트",
-        period: "2026.01 ~ 개발 중",
-        role: "Roblox Studio 개발",
-        overview: "Roblox Studio를 활용하여 개발 진행중이며, 광물을 캐와서 최고의 부자가 되어보자.",
-        features: [
-          "광물을 캐와서 최고의 부자가 되어보자.",
-        ],
-        images: [
-          "/images/minerlife/screenshot1.png",
-        ],
-      }
-    },
+    }
+    // {
+    //   title: "광부라이프",
+    //   slug: "minerlife",
+    //   logo: "",
+    //   description: "광물을 캐와서 최고의 부자가 되어보자.",
+    //   techStack: ["Roblox Studio", "Lua"],
+    //   details: {
+    //     company: "개인 프로젝트",
+    //     period: "2026.01 ~ 개발 중",
+    //     role: "Roblox Studio 개발",
+    //     overview: "Roblox Studio를 활용하여 개발 진행중이며, 광물을 캐와서 최고의 부자가 되어보자.",
+    //     features: [
+    //       "광물을 캐와서 최고의 부자가 되어보자.",
+    //     ],
+    //     images: [
+    //       "/images/minerlife/screenshot1.png",
+    //     ],
+    //   }
+    // },
   ],
 };
