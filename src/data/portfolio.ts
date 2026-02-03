@@ -295,7 +295,8 @@ export const portfolioData: PortfolioData = {
         overview: "모바일에서의 최고의 퍼포먼스를 위해 ECS, DOTS를 활용하여 개발 진행중이며, 뱀서라이크 게임성을 유지하면서 가방정리와 머지 시스템을 추가했습니다.\n\n효율적인 아이템 배치로 대량의 적을 시원하게 적을 잡는 원초적인 재미를 위해 개발하고 있습니다.",
         features: [
           "Component 기반으로 다양한 무기 시스템 개발",
-          "ECS기반으로 게임 개발 (최대 300마리 적 / 최대 30개 이상의 투사체 및 VFX)"
+          "ECS기반으로 게임 개발 (최대 300마리 적 / 최대 30개 이상의 투사체 및 VFX)",
+          "게임 데이터를 ScriptableObject로 관리하며 그에 필요한 에디터 툴 개발"
         ],
         problem: "ECS/DOTS를 활용하여 개발하다보니 기존 Monobehaviour 기반 방식과는 꽤나 달라 어려움이 있었습니다.",
         solution: "ECS/DOTS 기반으로 개발되던 기록이 상당히 존재해 열심히 찾고 AI를 활용하며 개발하고 있습니다.",
