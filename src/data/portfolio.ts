@@ -278,7 +278,7 @@ export const portfolioData: PortfolioData = {
           "/images/projecta/screenshot1.jpg",
         ],
         resources: [
-          { title: "Gameplay", link: "https://www.youtube.com/shorts/pqHr367OqsI", type: "video" },
+          { title: "Gameplay", link: "https://youtube.com/shorts/7zvAs1d9APU", type: "video" },
         ]
       }
     },
